@@ -2,10 +2,17 @@
   <div class="container">
     <%= link_to "Funny Movies", root_path, id: "logo" %>
 
-    <%= form_for :session, url: login_path, html: {class: "login-form"} do |f| %>
-      <%= f.email_field :email, placeholder: "email" %>
-      <%= f.password_field :password, placeholder: "password" %>
-      <%= f.submit "Log in", class: "" %>
+    <% if logged_in? %>
+      <div style="color: white; float: right; margin-top: 17px;">
+        Welcome <%= current_user.email %>
+        <%= link_to "Log out", logout_path, method: :delete, style: "color: white" %>
+      </div>
+    <% else %>
+      <%= form_for :session, url: login_path, html: {class: "login-form"} do |f| %>
+        <%= f.email_field :email, placeholder: "email" %>
+        <%= f.password_field :password, placeholder: "password" %>
+        <%= f.submit "Log in", class: "" %>
+      <% end %>
     <% end %>
   </div>
 </header>

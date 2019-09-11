@@ -9,4 +9,9 @@ class SessionsController < ApplicationController
       redirect_to root_path
     end
   end
+
+  def destroy
+    log_out if logged_in?
+    redirect_to root_url
+  end
 end
