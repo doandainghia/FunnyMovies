@@ -6,7 +6,11 @@
       </iframe>
     </div>
     <div class="col-md-5">
-      <p class="text-danger"><%= movie.title %></p>
+      <p>
+        <%= link_to movie_path(movie), style: "color: red" do %>
+          <%= movie.title %>
+        <% end %>
+      </p>
       <p>Shared by: <%= movie.user.email %></p>
       <p>Description:</p>
       <p><strong><%= movie.description %></strong></p>

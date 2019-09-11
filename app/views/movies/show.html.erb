@@ -1,19 +1,18 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @movie.title %>
-</p>
-
-<p>
-  <iframe src="<%= display_video @movie.url %>" class="w-100" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-  </iframe>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @movie.description %>
-</p>
-
-<%= link_to 'Edit', edit_movie_path(@movie) %> |
-<%= link_to 'Back', movies_path %>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-3">
+    <iframe src="<%= display_video @movie.url %>" class="w-100" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+  </div>
+  <div class="col-md-5">
+    <p class="text-danger"><%= @movie.title %></p>
+    <p>Description:</p>
+    <p><strong><%= @movie.description %></strong></p>
+    <p>
+      <%= link_to edit_movie_path(@movie) do %>
+        <button>EDIT</button>
+      <% end %>
+    </p>
+  </div>
+  <div class="col-md-2"></div>
+</div>
