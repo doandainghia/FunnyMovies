@@ -68,7 +68,18 @@ p {
   text-decoration: none;
 }
 
+.user-action {
+  float: right;
+}
+
 .login-form {
-  float:right;
   margin-top: 13px;
+}
+
+.logout-form {
+  margin-top: 17px;
+}
+
+.logout-form span {
+  color: white;
 }
