@@ -17,7 +17,10 @@
     <% @movies.each do |movie| %>
       <tr>
         <td><%= movie.title %></td>
-        <td><%= movie.url %></td>
+        <td>
+          <iframe src="<%= display_video movie.url %>" class="w-100" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+          </iframe>
+        </td>
         <td><%= movie.description %></td>
         <td><%= movie.user.name %></td>
         <td><%= link_to 'Show', movie %></td>
