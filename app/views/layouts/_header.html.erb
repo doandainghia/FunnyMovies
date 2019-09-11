@@ -6,6 +6,9 @@
       <% if logged_in? %>
         <div class="logout-form">
           <span>Welcome <%= current_user.email %></span>
+          <%= link_to new_movie_path do %>
+            <button>Share a movie</button>
+          <% end %>
           <%= link_to logout_path, method: :delete do %>
             <button>Logout</button>
           <% end %>
