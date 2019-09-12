@@ -77,12 +77,16 @@ p {
 
 .logout-form {
   margin-top: 17px;
+
+  span {
+    color: white;
+  }
 }
 
-.logout-form span {
-  color: white;
-}
-
-.text-black {
+.black-text {
   color: black !important;
+}
+
+.red-text {
+  color: red !important;
 }
