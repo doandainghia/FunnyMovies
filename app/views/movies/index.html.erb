@@ -7,13 +7,17 @@
     </div>
     <div class="col-md-5">
       <p>
-        <%= link_to movie_path(movie), style: "color: red" do %>
+        <%= link_to movie_path(movie), class: "red-text" do %>
           <%= movie.title %>
         <% end %>
       </p>
       <p>Shared by: <%= movie.user.email %></p>
       <p>Description:</p>
-      <p><strong><%= movie.description %></strong></p>
+      <p>
+        <strong>
+          <%= truncate movie.description, length: 100, omission: "... (continued)" %>
+        </strong>
+      </p>
     </div>
     <div class="col-md-2"></div>
   </div>

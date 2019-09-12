@@ -5,7 +5,9 @@
     </iframe>
   </div>
   <div class="col-md-5">
-    <p class="text-danger"><%= @movie.title %></p>
+    <p class="red-text">
+      <%= @movie.title %>
+    </p>
     <p>Description:</p>
     <p><strong><%= @movie.description %></strong></p>
     <% if current_user&.id == @movie.user_id %>
