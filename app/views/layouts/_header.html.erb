@@ -5,12 +5,15 @@
     <div class="user-action">
       <% if logged_in? %>
         <div class="logout-form">
-          <span>Welcome <%= current_user.email %></span>
-          <%= link_to new_movie_path do %>
-            <button>Share a movie</button>
+          <span>
+            Welcome
+            <%= link_to current_user.email, user_path(current_user) %>
+          </span>
+          <%= button_tag(type: :button) do %>
+            <% link_to "Share a movie", new_movie_path, class: "text-black" %>
           <% end %>
-          <%= link_to logout_path, method: :delete do %>
-            <button>Logout</button>
+          <%= button_tag(type: :button) do %>
+            <% link_to "Logout", logout_path, method: :delete, class: "text-black" %>
           <% end %>
         </div>
       <% else %>
@@ -18,8 +21,8 @@
           <%= f.email_field :email, placeholder: "email" %>
           <%= f.password_field :password, placeholder: "password" %>
           <%= f.submit "Log in", class: "" %>
-          <%= link_to new_user_path do %>
-            <button>Register</button>
+          <%= button_tag(type: :button) do %>
+            <%= link_to "Register", new_user_path, class: "text-black" %>
           <% end %>
         <% end %>
       <% end %>

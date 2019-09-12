@@ -30,7 +30,8 @@
       </div>
 
       <div class="actions">
-        <%= form.submit %>
+        <% button_name = form.object.new_record? ? "Share" : "Update" %>
+        <%= form.submit button_name, class: "btn btn-primary" %>
       </div>
     <% end %>
   </div>

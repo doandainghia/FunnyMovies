@@ -10,13 +10,8 @@
     <p><strong><%= @movie.description %></strong></p>
     <% if current_user&.id == @movie.user_id %>
       <p>
-        <%= link_to edit_movie_path(@movie) do %>
-          <button>Edit</button>
-        <% end %>
-
-        <%= link_to movie_path(@movie), method: :delete do %>
-          <button>Delete</button>
-        <% end %>
+        <%= link_to "Edit", edit_movie_path(@movie), class: "btn btn-primary" %>
+        <%= link_to "Delete", movie_path(@movie), method: :delete, class: "btn btn-primary" %>
       </p>
     <% end %>
   </div>
