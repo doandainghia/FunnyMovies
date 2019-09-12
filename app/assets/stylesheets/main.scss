@@ -9,8 +9,9 @@ body {
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 18px;
+  color: black;
 }
 
 pre {
@@ -23,12 +24,11 @@ a {
   color: #000;
 
   &:visited {
-    color: #666;
+    color: white;
   }
 
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: blue;
   }
 }
 
@@ -46,8 +46,9 @@ div {
   }
 }
 
-#notice {
+#notice, .alert-notice {
   color: green;
+  font-size: 15px;
 }
 
 .field_with_errors {
